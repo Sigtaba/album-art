@@ -13,29 +13,44 @@
     margin: 0
     position: relative
     top: 230px
-  button
-    background-color: transparent
-    display: block
-    text-align: center
-    padding: 20px 40px
-    border: none
-    position: relative
-    text-transform: uppercase
-    font-weight: bold
-    letter-spacing: 4px
-    cursor: pointer
-    button:after, button:before
-      content: ''
-      position: absolute
-      top: 0
-      left: 0
-      bottom: 0
-      right: 0
-      border: 2px solid #fe5461
-      transition: transform .4s
-    button:after
-      transform: translate(5px, 5px)
-    button:before
-      transform: translate(-5px, -5px)
-    button:hover:after, button:hover:before
-      transform: translate(0)
+
+#btn
+  font-size: 12px
+  margin: 100px auto
+  background-color: transparent
+  display: block
+  text-align: center
+  padding: 20px 40px
+  border: none
+  position: relative
+  text-transform: uppercase
+  font-weight: bold
+  letter-spacing: 4px
+  cursor: pointer
+  img
+    height: 70px
+    margin-bottom: 15px
+    &:hover
+      animation: spin 4000ms infinite cubic-bezier(.77,.12,.25,1.38)
+      @-ms-keyframes spin
+        from
+          -ms-transform: rotate(0deg)
+        to
+          -ms-transform: rotate(4000deg)
+      @-moz-keyframes spin
+        from
+          -moz-transform: rotate(0deg)
+        to
+          -moz-transform: rotate(4000deg)
+
+      @-webkit-keyframes spin
+        from
+          -webkit-transform: rotate(0deg)
+        to
+          -webkit-transform: rotate(4000deg)
+
+      @keyframes spin
+        from
+          transform: rotate(0deg)
+        to
+          transform: rotate(4000deg)

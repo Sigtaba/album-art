@@ -480,7 +480,10 @@ p {
   position: relative;
   top: 230px;
 }
-.header button {
+
+#btn {
+  font-size: 12px;
+  margin: 100px auto;
   background-color: transparent;
   display: block;
   text-align: center;
@@ -492,24 +495,44 @@ p {
   letter-spacing: 4px;
   cursor: pointer;
 }
-.header button button:after, .header button button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  border: 2px solid #fe5461;
-  transition: transform 0.4s;
+#btn img {
+  height: 70px;
+  margin-bottom: 15px;
 }
-.header button button:after {
-  transform: translate(5px, 5px);
+#btn img:hover {
+  animation: spin 4000ms infinite cubic-bezier(0.77, 0.12, 0.25, 1.38);
 }
-.header button button:before {
-  transform: translate(-5px, -5px);
+@-ms-keyframes spin {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(4000deg);
+  }
 }
-.header button button:hover:after, .header button button:hover:before {
-  transform: translate(0);
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(4000deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(4000deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(4000deg);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
