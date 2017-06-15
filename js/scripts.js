@@ -64,7 +64,7 @@ $(document).ready(function() {
     for (i = 0; i < arrayOfAlbums.length; i++) {
 
       console.log(arrayOfAlbums);
-      $("#results").append( '<div class="album-group">' + '<ul>' +
+      $("#results").prepend( '<div class="album-group">' + '<ul>' +
         '<li>' + '<img src="' + arrayOfAlbums[i].image + '">' + '</li>' +
         '<li>' + arrayOfAlbums[i].artist + '</li>' +
         '<li>' + arrayOfAlbums[i].title + '</li>' +
