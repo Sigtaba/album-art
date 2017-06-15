@@ -11,23 +11,45 @@ function Album(image, artist, title, year) {
   this.year = year;
 }
 
-// function resetFields() {
-//     $("input#image").val("");
-//     $("input#artist").val("");
-//     $("input#title").val("");
-//     $("input#year").val("");
-// }
+function resetFields() {
+  $("input#image").val("");
+  $("input#artist").val("");
+  $("input#title").val("");
+  $("input#year").val("");
+}
 
 
 ////////////////////////////////////////////////////////////
 ////////////////////   USER INTERFACE   ////////////////////
 ////////////////////////////////////////////////////////////
 
+
 $(document).ready(function() {
+
+  // Get the modal
+  var modal = document.getElementById('album-modal');
+
+  // When the user clicks on the button, open the modal
+  $("#btn").click(function() {
+    modal.style.display = "block";
+  });
+
+  // When the user clicks on <span> (x), close the modal
+  $(".close").click(function() {
+    modal.style.display = "none";
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
   $(".form1").submit(function(event) {
     event.preventDefault();
 
-    var inputImage = $("input#image").attr("src", $(this).val());
+    var inputImage = $("input#image").val();
     var inputArtist = $("input#artist").val();
     var inputTitle = $("input#title").val();
     var inputYear = $("input#year").val();
@@ -37,33 +59,19 @@ $(document).ready(function() {
 
     $("#results").empty();
 
+    modal.style.display = "none";
+
     for (i = 0; i < arrayOfAlbums.length; i++) {
 
       console.log(arrayOfAlbums);
       $("#results").append( '<div class="album-group">' + '<ul>' +
-        '<li>' + arrayOfAlbums[i].image + '</li>' +
+        '<li>' + '<img src="' + arrayOfAlbums[i].image + '">' + '</li>' +
         '<li>' + arrayOfAlbums[i].artist + '</li>' +
         '<li>' + arrayOfAlbums[i].title + '</li>' +
         '<li>' + arrayOfAlbums[i].year + '</li>' +
         '</ul>' + '</div>'
       );
     }
-    // resetFields();
-    // $('.initially-hidden').show();
+    resetFields();
   });
-
 });
-
-function previewFile() {
-  var preview = document.querySelector('img');
-  var file    = document.querySelector('input[type=file]').files[0];
-  var reader  = new FileReader();
-
-  reader.addEventListener("load", function () {
-    preview.src = reader.result;
-  }, false);
-
-  if (file) {
-    reader.readAsDataURL(file);
-  }
-}

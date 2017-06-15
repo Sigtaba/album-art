@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Italiana" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.js"
     integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
     crossorigin="anonymous"></script>
@@ -9,31 +11,44 @@
     <title>Album Showcase</title>
   </head>
   <body>
-    <div class="form-wrap">
-      <h2>Enter Album:</h2>
-      <form class="form1" action="index.html" method="post">
-        <div class="form-group">
-          <label for="title">Upload Album Artwork: </label>
-          <input type="file" id="image" onchange="previewFile()"><br>
-          <img src="" height="200" alt="Image preview...">
-        </div>
-        <div class="form-group">
-          <label for="year">Artist Name: </label>
-          <input type="text" name="artist" id="artist">
-        </div>
-        <div class="form-group">
-          <label for="year">Album Name: </label>
-          <input type="text" name="title" id="title">
-        </div>
-        <div class="form-group">
-          <label for="year">Release Year: </label>
-          <input type="number" name="year" id="year">
-        </div>
-        <button type="submit" name="submit">Submit</button>
-      </form>
+    <div class="header">
+      <p>Album<br>Showcase</p>
+      <button id="btn">Add an Album</button>
     </div>
-    <div id="results">
+    <!-- Trigger/Open The Modal -->
 
+    <!-- The Modal -->
+    <div id="album-modal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="form-wrap">
+          <h2>Enter Album:</h2>
+          <form class="form1" action="index.html" method="post">
+            <div class="form-group">
+              <label for="image">Upload Album Artwork: </label>
+              <input type="text" id="image" name="image">
+            </div>
+            <div class="form-group">
+              <label for="artist">Artist Name: </label>
+              <input type="text" name="artist" id="artist">
+            </div>
+            <div class="form-group">
+              <label for="title">Album Name: </label>
+              <input type="text" name="title" id="title">
+            </div>
+            <div class="form-group">
+              <label for="year">Release Year: </label>
+              <input type="number" name="year" id="year">
+            </div>
+            <button type="submit" name="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="results">
     </div>
   </body>
 </html>

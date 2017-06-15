@@ -1,0 +1,41 @@
+.header
+  position: relative
+  text-align: center
+  width: 70vw
+  height: 400px
+  margin: 0 auto
+  background: red /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #FF3C6B, #FCA63F) /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #FF3C6B, #FCA63F) /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #FF3C6B, #FCA63F) /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #FF3C6B, #FCA63F) /* Standard syntax */
+  p
+    margin: 0
+    position: relative
+    top: 230px
+  button
+    background-color: transparent
+    display: block
+    text-align: center
+    padding: 20px 40px
+    border: none
+    position: relative
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: 4px
+    cursor: pointer
+    button:after, button:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      border: 2px solid #fe5461
+      transition: transform .4s
+    button:after
+      transform: translate(5px, 5px)
+    button:before
+      transform: translate(-5px, -5px)
+    button:hover:after, button:hover:before
+      transform: translate(0)
